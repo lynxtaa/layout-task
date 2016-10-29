@@ -1,21 +1,28 @@
-const app = angular.module('app', []);
-// const app = angular.module('app', ['ngRoute']);
+const app = angular.module('app', ['ngRoute']);
 
-// app.config(($routeProvider, $locationProvider) => {
-// 	$routeProvider
-// 		.when('/', {
-// 			redirectTo: '/1/1'
-// 		})
-// 		.when('/:currentWeek/:currentDay', {
-// 			templateUrl: 'views/sets.html',
-// 			controller: 'setsController'
-// 		})
-// 		.otherwise({
-// 			redirectTo: '/1/1'
-// 		});
-// });
+app.config(($routeProvider, $locationProvider) => {
+	$routeProvider
+		.when('/', {
+			redirectTo: '/article/100'
+		})
+		.when('/nav', {
+			templateUrl: 'views/popup.html',
+			controller: 'popupCtrl'
+		})
+		.when('/article/:id', {
+			templateUrl: 'views/article.html',
+			controller: 'articleCtrl'
+		})
+		.otherwise({
+			redirectTo: '/'
+		});
+});
 
-app.controller('mainCtrl', ['$scope', 'ArticlePreviews', ($scope, ArticlePreviews) => {
+app.controller('mainCtrl', ['$scope', $scope => {
+
+}]);
+
+app.controller('popupCtrl', ['$scope', 'ArticlePreviews', ($scope, ArticlePreviews) => {
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
 
@@ -32,4 +39,11 @@ app.controller('mainCtrl', ['$scope', 'ArticlePreviews', ($scope, ArticlePreview
         	$scope.$apply();
         }
     });
+}]);
+
+
+
+app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', ($scope, $routeParams, Articles) => {
+	let id = +$routeParams.id;
+	$scope.article = Articles.get(id);
 }]);

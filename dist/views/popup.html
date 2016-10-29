@@ -1,7 +1,6 @@
-<nav class="navbar navbar-light bg-faded navbar-fixed-top" id="main-nav">
+<nav class="navbar navbar-light navbar-fixed-top" id="main-nav">
 	<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
-	<div class="text-xs-center" ng-show="navCategories" ng-include="'views/category.html'">
-	</div>
+	<div class="text-xs-center" ng-show="navCategories" ng-include="'views/category.html'"></div>
 </nav>
 <header id="main-header" class="container-fluid">
 	<div class="text-xs-center" ng-include="'views/category.html'">
@@ -16,7 +15,7 @@
 					<span class="tag" ng-repeat="tag in preview.tags">{{tag}}</span>
 					<a href="#/article/{{preview.id}}"><h4>{{preview.header}}</h4></a>
 					<p class="preview">{{preview.previewText}}</p>
-					<footer class="footer">{{preview.author}}</footer>
+					<footer class="footer">Door: {{preview.author}}</footer>
 				</div>
 			</article>
 		</div>

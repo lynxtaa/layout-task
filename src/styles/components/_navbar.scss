@@ -12,4 +12,15 @@
 		@include category(#000, #f1eee7);
 		padding-bottom: 0;
 	}
+	.close {
+		float: right;
+		opacity: .7;
+		&:hover {
+			opacity: 1;
+		}
+		img {
+			height: 40px;
+			transition: all .2s ease-in-out;
+		}
+	}
 }

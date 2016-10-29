@@ -1,6 +1,10 @@
 <nav class="navbar navbar-light navbar-fixed-top" id="main-nav">
 	<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
-	<div class="text-xs-center" ng-show="navCategories" ng-include="'views/category.html'"></div>
+	<!-- <div class="text-xs-center" ng-show="navCategories" ng-include="'views/category.html'"></div> -->
+	<div class="col-md-5 offset-md-3" ng-show="navCategories" ng-include="'views/category.html'"></div>
+	<div class="close">
+		<a href="" ng-click="popup.hide()"><img src="icons/close.png"></a>
+	</div>
 </nav>
 <header id="main-header" class="container-fluid">
 	<div class="text-xs-center" ng-include="'views/category.html'">

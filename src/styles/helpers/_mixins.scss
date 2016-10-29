@@ -1,0 +1,30 @@
+@mixin category($textcolor, $bgcolor) {
+	display: inline-block;
+	padding-bottom: 43px;
+	font-weight: 300;
+	color: $textcolor;
+	a.nav-link {
+		color: $textcolor;
+		border: 2px solid $bgcolor;
+		border-radius: 30px;
+		padding: $category-paddings;
+		&:hover,
+		&:focus,
+		&.active,
+		&.active:hover,
+		&.active:focus,{
+			background-color: $bgcolor;
+			color: #000;
+		}
+	}
+	.nav-pills {
+		display: inline-block;
+		.nav-item + .nav-item {
+			margin-left: 10px;
+		}
+	}
+	span {
+		padding: $category-paddings;
+		float: left;
+	}
+}

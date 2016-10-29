@@ -1,0 +1,12 @@
+#main-nav {
+	padding: 12px 35px;
+	margin: 0px;
+	img.logo {
+		max-width: 150px;
+		height: auto;
+	}
+	.category {
+		@include category(#000, #f1eee7);
+		padding-bottom: 0;
+	}
+}

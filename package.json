@@ -1,0 +1,25 @@
+{
+  "name": "layout-task",
+  "version": "0.1.0",
+  "description": "Layout Task for Antares",
+  "main": "index.js",
+  "scripts": {
+    "test": "jshint src/"
+  },
+  "author": "Alex Kondratyuk",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-preprocess": "^5.1.0",
+    "jshint": "^2.9.4",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}

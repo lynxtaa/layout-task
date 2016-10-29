@@ -1,0 +1,109 @@
+#main-header {
+  color: #fff;
+  padding-top: 43px;
+  padding-bottom: 43px;
+  background-image: url("../img/bgImage.png");
+  background-position: center center;
+  background-size: cover;
+}
+#main-header .category {
+  display: inline-block;
+  padding-bottom: 43px;
+  font-weight: 300;
+  color: #fff;
+}
+#main-header .category a.nav-link {
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  padding: 0.3em 1em;
+}
+#main-header .category a.nav-link:hover, #main-header .category a.nav-link:focus, #main-header .category a.nav-link.active, #main-header .category a.nav-link.active:hover, #main-header .category a.nav-link.active:focus {
+  background-color: #fff;
+  color: #000;
+}
+#main-header .category .nav-pills {
+  display: inline-block;
+}
+#main-header .category .nav-pills .nav-item + .nav-item {
+  margin-left: 10px;
+}
+#main-header .category span {
+  padding: 0.3em 1em;
+  float: left;
+}
+#main-header article {
+  font-weight: 300;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+#main-header article:hover {
+  cursor: pointer;
+}
+#main-header article:hover h4 {
+  text-decoration: underline;
+}
+#main-header article h4 {
+  padding-bottom: 35px;
+}
+#main-header article .tag {
+  font-weight: 300;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+#main-header article .footer {
+  font-size: 12px;
+  line-height: 15px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 15px;
+}
+
+#main-nav {
+  padding: 12px 35px;
+  margin: 0px;
+}
+#main-nav img.logo {
+  max-width: 150px;
+  height: auto;
+}
+#main-nav .category {
+  display: inline-block;
+  padding-bottom: 43px;
+  font-weight: 300;
+  color: #000;
+  padding-bottom: 0;
+}
+#main-nav .category a.nav-link {
+  color: #000;
+  border: 2px solid #f1eee7;
+  border-radius: 30px;
+  padding: 0.3em 1em;
+}
+#main-nav .category a.nav-link:hover, #main-nav .category a.nav-link:focus, #main-nav .category a.nav-link.active, #main-nav .category a.nav-link.active:hover, #main-nav .category a.nav-link.active:focus {
+  background-color: #f1eee7;
+  color: #000;
+}
+#main-nav .category .nav-pills {
+  display: inline-block;
+}
+#main-nav .category .nav-pills .nav-item + .nav-item {
+  margin-left: 10px;
+}
+#main-nav .category span {
+  padding: 0.3em 1em;
+  float: left;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}

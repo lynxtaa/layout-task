@@ -1,0 +1,46 @@
+#main-header {
+	color: #fff;
+	padding-top: 43px;
+	padding-bottom: 43px;
+	background: {
+		image: url('../img/bgImage.png');
+		position: center center;
+		size: cover;
+	}
+	.category {
+		@include category(#fff, #fff);
+	}
+
+	article {
+		font-weight: 300;
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid rgba(255,255,255,.3);
+		&:hover {
+			cursor: pointer;
+			h4 {
+				text-decoration: underline;
+			}
+		}
+
+		h4 {
+			padding-bottom: 35px;
+
+		}
+		.tag {
+			font-weight: 300;
+			margin-bottom: 0;
+			padding-left: 0;
+		}
+		.footer {
+			font-size: 12px;
+			line-height: 15px;
+			position: absolute;
+			bottom: 0px;
+			width: 100%;
+			height: 15px;
+		}
+
+	}
+
+}

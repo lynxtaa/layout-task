@@ -2,8 +2,10 @@
 @import 'helpers/placeholders';
 @import 'helpers/mixins';
 @import 'layout/header';
-@import 'layout/navbar';
 @import 'layout/article';
+@import 'components/navbar';
+@import 'components/progressbar';
+@import 'components/circle';
 
 body {
 	font-family: $font-stack;

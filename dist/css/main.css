@@ -38,6 +38,9 @@
   margin-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+#main-header article a {
+  color: #fff;
+}
 #main-header article h4 {
   padding-bottom: 35px;
 }
@@ -90,6 +93,21 @@
 #main-nav .category span {
   padding: 0.3em 1em;
   float: left;
+}
+
+article.full-article {
+  font-weight: 300;
+  line-height: 1.8;
+  font-size: 18px;
+  color: #000;
+}
+article.full-article h1 {
+  font-weight: 400;
+  margin-left: -5px;
+  margin-top: 1em;
+}
+article.full-article p.author {
+  padding-bottom: 2em;
 }
 
 body {

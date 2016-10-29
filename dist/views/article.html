@@ -1,26 +1,28 @@
-<nav class="navbar navbar-light navbar-fixed-top" id="main-nav" style="position: absolute">
-	<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png" /></a>
-</nav>
+<div ng-hide="popup.active">
+	<nav class="navbar navbar-light navbar-fixed-top" id="main-nav" style="position: absolute">
+		<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png" /></a>
+	</nav>
 
-<div class="container">
-	<div class="col-md-10 offset-md-1">
-		<article class="full-article">
-			<h1>{{article.header}}</h1>
-			<p class="author"><cite>Author: {{article.author}}</cite><p>
-			<ng-include src="articlePath" onload="finishLoading()"> </ng-include>
-		</article>
-	</div>
-</div>
-
-<nav class="navbar navbar-light navbar-fixed-bottom text-xs-center" id="progressbar" ng-hide="popup">
-	<cite>{{article.author}}:</cite> <span class="article-header">{{article.header | limitTo: 30}}...</span>
-	<div class="circlebar">
-		<div class="c100 small" ng-class="percentClass" ng-click="openPopup()">
-			<span><img src="icons/article.png"></span>
-			<div class="slice">
-				<div class="bar"></div>
-				<div class="fill"></div>
-			</div>
+	<div class="container">
+		<div class="col-md-10 offset-md-1">
+			<article class="full-article">
+				<h1>{{article.header}}</h1>
+				<p class="author"><cite>Author: {{article.author}}</cite><p>
+				<ng-include src="articlePath" onload="finishLoading()"> </ng-include>
+			</article>
 		</div>
 	</div>
-</nav>
+
+	<nav class="navbar navbar-light navbar-fixed-bottom text-xs-center" id="progressbar">
+		<cite>{{article.author}}:</cite> <span class="article-header">{{article.header | limitTo: 30}}...</span>
+		<div class="circlebar">
+			<div class="c100 small" ng-class="percentClass" ng-click="popup.show()">
+				<span><img src="icons/article.png"></span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+		</div>
+	</nav>
+</div>

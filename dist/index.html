@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="css/main.css">
 
 <body ng-app="app" ng-controller="mainCtrl" ng-cloak>
+	<div ng-include="'views/popup.html'" ng-controller="popupCtrl" ng-if="popup.active"></div>
 	<ng-view></ng-view>
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>

@@ -9,23 +9,27 @@ app.config(($routeProvider, $locationProvider) => {
 			templateUrl: 'views/article.html',
 			controller: 'articleCtrl'
 		})
-		.when('/article/:id/nav', {
-			templateUrl: 'views/popup.html',
-			controller: 'popupCtrl'
-		})
 		.otherwise({
-			redirectTo: '/'
+			redirectTo: '/article/100'
 		});
 });
 
 app.controller('mainCtrl', ['$scope', '$rootScope', ($scope, $rootScope) => {
-
+	$scope.popup = {
+		active: false,
+		show() {
+			this.active = true;
+		},
+		hide() {
+			this.active = false;
+		}
+	};
 }]);
 
-app.controller('popupCtrl', ['$scope', '$routeParams', 'ArticlePreviews', ($scope, $routeParams, ArticlePreviews) => {
+app.controller('popupCtrl', ['$scope', '$rootScope', 'ArticlePreviews', ($scope, $rootScope, ArticlePreviews) => {
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
-	$scope.articleId = $routeParams.id;
+	$rootScope.template = 'views/popup.html';
 
 	jQuery(window).scroll(event => {
 		let scroll = jQuery(window).scrollTop();
@@ -43,18 +47,12 @@ app.controller('popupCtrl', ['$scope', '$routeParams', 'ArticlePreviews', ($scop
 }]);
 
 
-
-app.controller('articleCtrl', ['$scope', '$routeParams', '$location', 'Articles', ($scope, $routeParams, $location, Articles) => {
+app.controller('articleCtrl', ['$scope', '$routeParams', '$rootScope', 'Articles', ($scope, $routeParams, $rootScope, Articles) => {
 	let id = +$routeParams.id;
 	$scope.article = Articles.get(id);
 	$scope.articlePath = `views/articles/${$scope.article.id}.html`;
 
-	$scope.openPopup = function() {
-		let path = $location.path() + '/nav';
-		$location.path(path);
-	};
-
-	// Reading Progress
+	// Reading Progress (better move to separate directive)
 	$scope.finishLoading = function() {
 		(function($) {
 			let max = $(document).height() - $(window).height();

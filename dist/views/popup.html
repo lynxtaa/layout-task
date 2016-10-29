@@ -1,9 +1,8 @@
 <nav class="navbar navbar-light navbar-fixed-top" id="main-nav">
 	<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
-	<!-- <div class="text-xs-center" ng-show="navCategories" ng-include="'views/category.html'"></div> -->
 	<div class="col-md-5 offset-md-3" ng-show="navCategories" ng-include="'views/category.html'"></div>
 	<div class="close">
-		<a href="" ng-click="popup.hide()"><img src="icons/close.png"></a>
+		<a href="#" ng-click="popup.hide()"><img src="icons/close.png"></a>
 	</div>
 </nav>
 <header id="main-header" class="container-fluid">
@@ -13,11 +12,11 @@
 		<div class="col-md-10 offset-md-1">
 			<article class="row row-eq-height" ng-repeat="preview in previews">
 				<div class="col-md-6">
-					<a href="#/article/{{preview.id}}"><img class="img-fluid" src="img/{{preview.img}}"></a>
+					<a href="#/article/{{preview.id}}" ng-click="popup.hide()"><img class="img-fluid" src="img/{{preview.img}}"></a>
 				</div>
 				<div class="col-md-6">
 					<span class="tag" ng-repeat="tag in preview.tags">{{tag}}</span>
-					<a href="#/article/{{preview.id}}"><h4>{{preview.header}}</h4></a>
+					<a href="#/article/{{preview.id}}" ng-click="popup.hide()"><h4>{{preview.header}}</h4></a>
 					<p class="preview">{{preview.previewText}}</p>
 					<footer class="footer">Door: {{preview.author}}</footer>
 				</div>

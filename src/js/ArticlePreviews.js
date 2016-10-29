@@ -9,7 +9,7 @@ app.factory('ArticlePreviews', () => {
 					"header": "Road testing 12 different shades of orange lipstick in search of the best",
 					"previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum, doloribus!",
 					"img": "article1.png",
-					"author" : "Door: Lorena Max | Vandaag"
+					"author" : "Lorena Max"
 				},
 				{
 					"id": 102,
@@ -17,7 +17,7 @@ app.factory('ArticlePreviews', () => {
 					"header": "Kylie Jenner's new lip kit color, majesty, is a 'Black Metal Nature'",
 					"previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptatibus, provident sunt, sequi unde quaerat.",
 					"img": "article2.png",
-					"author" : "Door: Lorena Max | Vandaag"
+					"author" : "Lorena Max"
 				},
 				{
 					"id": 103,
@@ -25,7 +25,7 @@ app.factory('ArticlePreviews', () => {
 					"header": "9 legit lip plumpers that actually do the job",
 					"previewText": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem voluptatibus, provident sunt.",
 					"img": "article1.png",
-					"author" : "Door: Lorena Max | Vandaag"
+					"author" : "Lorena Max"
 				}
 			];
 		}

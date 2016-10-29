@@ -112,6 +112,17 @@ article.full-article p.author {
   padding: 0.3em 1em;
   float: left;
 }
+#main-nav .close {
+  float: right;
+  opacity: .7;
+}
+#main-nav .close:hover {
+  opacity: 1;
+}
+#main-nav .close img {
+  height: 40px;
+  transition: all .2s ease-in-out;
+}
 
 #progressbar {
   height: 66px;

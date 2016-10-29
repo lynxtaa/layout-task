@@ -47,13 +47,13 @@ module.exports = function(grunt) {
 			debug: {
 				cwd: 'dist',  // set working folder / root to copy
 				src: '**/*',           // copy all files and subfolders
-				dest: 'N:/push-app-debug',    // destination folder
+				dest: 'N:/layout-task-debug',    // destination folder
 				expand: true           // required when using cwd
 			},
 			release: {
 				cwd: 'dist',
 				src: '**/*',
-				dest: 'N:/push-app',
+				dest: 'N:/layout-task',
 				expand: true
 			}
 		},

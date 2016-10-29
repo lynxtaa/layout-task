@@ -1,3 +1,12 @@
+#popup {
+	// position: absolute;
+	// top: 0;
+	// left: 0;
+	// right: 0;
+	// max-height: 100vh;
+	// overflow-y: auto;
+}
+
 #main-header {
 	color: #fff;
 	padding-top: 43px;
@@ -6,6 +15,7 @@
 		image: url('../img/bgImage.png');
 		position: center center;
 		size: cover;
+		attachment: fixed;
 	}
 	.category {
 		@include category(#fff, #fff);

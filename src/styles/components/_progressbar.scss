@@ -10,6 +10,10 @@
 	}
 	.circlebar {
 		float: right;
+
+		.c100:hover {
+			cursor: pointer;
+		}
 		img {
 			max-height: 20px;
 		}

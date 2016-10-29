@@ -12,10 +12,10 @@
 	</div>
 </div>
 
-<nav class="navbar navbar-light navbar-fixed-bottom text-xs-center" id="progressbar">
+<nav class="navbar navbar-light navbar-fixed-bottom text-xs-center" id="progressbar" ng-hide="popup">
 	<cite>{{article.author}}:</cite> <span class="article-header">{{article.header | limitTo: 30}}...</span>
 	<div class="circlebar">
-		<div class="c100 small" ng-class="percentClass">
+		<div class="c100 small" ng-class="percentClass" ng-click="openPopup()">
 			<span><img src="icons/article.png"></span>
 			<div class="slice">
 				<div class="bar"></div>

@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="css/main.css">
 
 <body ng-app="app" ng-controller="mainCtrl" ng-cloak>
-	<nav class="navbar navbar-light bg-faded" id="main-nav">
+	<nav class="navbar navbar-light bg-faded navbar-fixed-top" id="main-nav">
 		<a class="navbar-brand" href="#"><img class="logo" src="img/logo.png"></a>
-		<div class="text-xs-center">
+		<div class="text-xs-center" ng-show="navCategories">
 			<div class="category">
 				<span>Alles in: </span>
 				<ul class="nav nav-pills">
@@ -75,8 +75,8 @@
 
 	</header>
 
-	<!-- <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script> -->
-	<!-- <script>jQuery.noConflict();</script> -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script>jQuery.noConflict();</script>
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.2.0/js/tether.min.js"></script> -->
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/js/bootstrap.min.js"></script> -->
 	<script src="js/app.js"></script>

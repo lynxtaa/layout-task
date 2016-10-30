@@ -24,4 +24,7 @@
 			border-color: #1087a0;
 		}
 	}
+	@include respond-to(phone) {
+		padding: 10px 15px;
+	}
 }

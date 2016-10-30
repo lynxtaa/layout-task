@@ -46,27 +46,29 @@ app.controller('popupCtrl', ['$scope', 'ArticlePreviews', function ($scope, Arti
 	});
 }]);
 
-app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', function ($scope, $routeParams, Articles) {
+app.controller('articleCtrl', ['$scope', '$routeParams', '$timeout', 'Articles', function ($scope, $routeParams, $timeout, Articles) {
 	var id = +$routeParams.id;
 	$scope.article = Articles.get(id);
 	$scope.articlePath = 'views/articles/' + $scope.article.id + '.html';
 
 	// Reading Progress (better move to separate directive)
 	$scope.finishLoading = function () {
-		(function ($) {
-			var max = void 0;
+		var max = {
+			value: 0,
+			update: function update() {
+				this.value = $(document).height() - $(window).height();
+			}
+		};
 
-			$(window).on('resize', function () {
-				max = $(document).height() - $(window).height();
-			}).trigger('resize');
+		$(window).on('resize', max.update).trigger('resize');
 
-			$(document).on('scroll', function () {
-				var percent = Math.round($(window).scrollTop() * 100 / max);
-				$scope.$apply(function () {
-					$scope.percentClass = 'p' + percent;
-				});
-			}).trigger('scroll');
-		})(jQuery);
+		$(document).on('scroll', function () {
+			max.update();
+			var percent = Math.round($(window).scrollTop() * 100 / max.value);
+			$timeout(function () {
+				$scope.percentClass = 'p' + percent;
+			});
+		}).trigger('scroll');
 	};
 }]);
 

@@ -32,19 +32,25 @@ app.controller('popupCtrl', ['$scope', 'ArticlePreviews', ($scope, ArticlePrevie
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
 
-	jQuery(window).scroll(event => {
-		let scroll = jQuery(window).scrollTop();
-		let oldState = $scope.navCategories;
+	$(document).ready(function() {
+		let $brand = $('.navbar-brand');
 
-		if (scroll > 50 || scroll === undefined) {
-			$scope.navCategories = true;
-		} else {
-			$scope.navCategories = false;
-        }
-        if ($scope.navCategories !== oldState) {
-        	$scope.$apply();
-        }
-    });
+		$(window).on('scroll', function() {
+			let scroll = $(window).scrollTop();
+			let oldState = $scope.navCategories;
+
+			if (scroll > 50 || scroll === undefined) {
+				$scope.navCategories = true;
+				$brand.addClass('hidden-md-down');
+			} else {
+				$scope.navCategories = false;
+				$brand.removeClass('hidden-md-down');
+	        }
+	        if ($scope.navCategories !== oldState) {
+	        	$scope.$apply();
+	        }
+		});
+	});
 }]);
 
 

@@ -31,18 +31,24 @@ app.controller('popupCtrl', ['$scope', 'ArticlePreviews', function ($scope, Arti
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
 
-	jQuery(window).scroll(function (event) {
-		var scroll = jQuery(window).scrollTop();
-		var oldState = $scope.navCategories;
+	$(document).ready(function () {
+		var $brand = $('.navbar-brand');
 
-		if (scroll > 50 || scroll === undefined) {
-			$scope.navCategories = true;
-		} else {
-			$scope.navCategories = false;
-		}
-		if ($scope.navCategories !== oldState) {
-			$scope.$apply();
-		}
+		$(window).on('scroll', function () {
+			var scroll = $(window).scrollTop();
+			var oldState = $scope.navCategories;
+
+			if (scroll > 50 || scroll === undefined) {
+				$scope.navCategories = true;
+				$brand.addClass('hidden-md-down');
+			} else {
+				$scope.navCategories = false;
+				$brand.removeClass('hidden-md-down');
+			}
+			if ($scope.navCategories !== oldState) {
+				$scope.$apply();
+			}
+		});
 	});
 }]);
 

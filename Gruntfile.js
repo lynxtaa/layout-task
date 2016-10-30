@@ -68,28 +68,6 @@ module.exports = function(grunt) {
 					'dist/css/main.css': 'src/styles/main.scss'
 				}
 			}
-		},
-
-		preprocess : {
-			debug : {
-				expand: true,
-				cwd: 'src/',
-				src: '**/*.html',
-				dest: 'dist/',
-				options: {
-					context : {	DEBUG: 'true' }
-				}
-			},
-
-			release : {
-				expand: true,
-				cwd: 'src/',
-				src: '**/*.html',
-				dest: 'dist/',
-				options: {
-					context : {	DEBUG: 'false' }
-				}
-			}
 		}
 	});
 
@@ -102,7 +80,6 @@ module.exports = function(grunt) {
 		'grunt-contrib-copy',
 		'grunt-contrib-watch',
 		'grunt-contrib-jshint',
-		'grunt-preprocess',
 		'grunt-contrib-sass'
 	].forEach(function(task) {
 		grunt.loadNpmTasks(task);

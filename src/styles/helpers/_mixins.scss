@@ -1,8 +1,14 @@
 @mixin category($textcolor, $bgcolor) {
+	width: 100%;
 	display: inline-block;
+	text-align: center;
 	padding-bottom: 43px;
 	font-weight: 300;
 	color: $textcolor;
+	.row {
+		overflow: auto;
+		white-space: nowrap;
+	}
 	a.nav-link {
 		color: $textcolor;
 		border: 2px solid $bgcolor;
@@ -16,16 +22,13 @@
 			background-color: $bgcolor;
 			color: #000;
 		}
-	}
-	.nav-pills {
-		display: inline-block;
-		.nav-item + .nav-item {
+		& + .nav-link {
 			margin-left: 10px;
 		}
 	}
 	span {
 		padding: $category-paddings;
-		float: left;
+		// float: left;
 	}
 }
 
@@ -34,9 +37,9 @@
 		@media only screen and (max-width: $small) { @content; }
 	}
 
-	// @else if $media == medium-screens {
-	// 	@media only screen and (min-width: $small + 1) and (max-width: $large - 1) { @content; }
-	// }
+	@else if $media == medium {
+		@media only screen and (min-width: $small + 1) and (max-width: $wide - 1) { @content; }
+	}
 
 	@else if $media == wide {
 		@media only screen and (min-width: $wide) { @content; }

@@ -46,6 +46,10 @@
 			bottom: 0px;
 			width: 100%;
 			height: 15px;
+			@include respond-to(phone) {
+				position: static;
+				padding-top: 20px;
+			}
 		}
 		.preview {
 			@include respond-to(phone) {

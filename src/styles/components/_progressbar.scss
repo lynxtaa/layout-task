@@ -26,5 +26,6 @@
 	}
 	@include respond-to(phone) {
 		padding: 10px 15px;
+		line-height: 23px;
 	}
 }

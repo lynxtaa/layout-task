@@ -150,6 +150,12 @@ article.full-article p.author {
 #progressbar .circlebar .bar {
   border-color: #1087a0;
 }
+@media only screen and (max-width: 576px) {
+  #progressbar {
+    padding: 10px 15px;
+    line-height: 23px;
+  }
+}
 
 .rect-auto,
 .c100.p51 .slice,

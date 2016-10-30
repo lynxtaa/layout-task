@@ -54,7 +54,11 @@ app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', function ($
 	// Reading Progress (better move to separate directive)
 	$scope.finishLoading = function () {
 		(function ($) {
-			var max = $(document).height() - $(window).height();
+			var max = void 0;
+
+			$(window).on('resize', function () {
+				max = $(document).height() - $(window).height();
+			}).trigger('resize');
 
 			$(document).on('scroll', function () {
 				var percent = Math.round($(window).scrollTop() * 100 / max);
@@ -78,6 +82,14 @@ app.directive('popupTemplate', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'views/popup.html',
+		replace: true
+	};
+});
+
+app.directive('progressBar', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/progressbar.html',
 		replace: true
 	};
 });

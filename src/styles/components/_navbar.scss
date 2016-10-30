@@ -10,10 +10,14 @@
 	}
 	.category {
 		@include category(#000, #f1eee7);
+		padding-top: 3px;
 		padding-bottom: 0;
 	}
 	.close {
-		float: right;
+		// float: right;
+		position: absolute;
+		top: 12px;
+		right: 25px;
 		opacity: .7;
 		&:hover {
 			opacity: 1;

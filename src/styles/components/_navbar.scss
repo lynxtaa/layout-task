@@ -1,5 +1,4 @@
 #main-nav {
-	// width: 100%;
 	height: $nav-height;
 	padding: 12px 35px;
 	margin: 0px;
@@ -22,7 +21,6 @@
 		background-color: #fff;
 		border-radius: 50%;
 		position: absolute;
-		// top: 12px;
 		right: 25px;
 		opacity: .7;
 		@include respond-to(wide) {

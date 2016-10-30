@@ -13,7 +13,7 @@ app.config(function ($routeProvider, $locationProvider) {
 	});
 });
 
-app.controller('mainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope) {
+app.controller('mainCtrl', function ($scope) {
 	$scope.popup = {
 		active: false,
 		show: function show() {
@@ -21,15 +21,15 @@ app.controller('mainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope
 			this.active = true;
 		},
 		hide: function hide() {
+			window.scrollTo(0, 0);
 			this.active = false;
 		}
 	};
-}]);
+});
 
-app.controller('popupCtrl', ['$scope', '$rootScope', 'ArticlePreviews', function ($scope, $rootScope, ArticlePreviews) {
+app.controller('popupCtrl', ['$scope', 'ArticlePreviews', function ($scope, ArticlePreviews) {
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
-	$rootScope.template = 'views/popup.html';
 
 	jQuery(window).scroll(function (event) {
 		var scroll = jQuery(window).scrollTop();
@@ -46,7 +46,7 @@ app.controller('popupCtrl', ['$scope', '$rootScope', 'ArticlePreviews', function
 	});
 }]);
 
-app.controller('articleCtrl', ['$scope', '$routeParams', '$rootScope', 'Articles', function ($scope, $routeParams, $rootScope, Articles) {
+app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', function ($scope, $routeParams, Articles) {
 	var id = +$routeParams.id;
 	$scope.article = Articles.get(id);
 	$scope.articlePath = 'views/articles/' + $scope.article.id + '.html';

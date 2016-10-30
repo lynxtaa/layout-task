@@ -22,6 +22,7 @@ app.controller('mainCtrl', $scope => {
 			this.active = true;
 		},
 		hide() {
+			window.scrollTo(0, 0);
 			this.active = false;
 		}
 	};

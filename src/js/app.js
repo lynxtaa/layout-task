@@ -56,7 +56,11 @@ app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', ($scope, $r
 	// Reading Progress (better move to separate directive)
 	$scope.finishLoading = function() {
 		(function($) {
-			let max = $(document).height() - $(window).height();
+			let max;
+
+			$(window).on('resize', function() {
+				max = $(document).height() - $(window).height();
+			}).trigger('resize');
 
 			$(document).on('scroll', function() {
 				let percent = Math.round($(window).scrollTop() * 100 / max);

@@ -8,7 +8,7 @@
 			<article class="full-article">
 				<h1>{{article.header}}</h1>
 				<p class="author"><cite>Author: {{article.author}}</cite><p>
-				<ng-include src="articlePath" onload="finishLoading()"> </ng-include>
+				<ng-include src="article.textUrl" onload="finishLoading()"> </ng-include>
 			</article>
 		</div>
 	</div>

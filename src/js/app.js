@@ -14,7 +14,7 @@ app.config(($routeProvider, $locationProvider) => {
 		});
 });
 
-app.controller('mainCtrl', ['$scope', '$rootScope', ($scope, $rootScope) => {
+app.controller('mainCtrl', $scope => {
 	$scope.popup = {
 		active: false,
 		show() {
@@ -25,12 +25,11 @@ app.controller('mainCtrl', ['$scope', '$rootScope', ($scope, $rootScope) => {
 			this.active = false;
 		}
 	};
-}]);
+});
 
-app.controller('popupCtrl', ['$scope', '$rootScope', 'ArticlePreviews', ($scope, $rootScope, ArticlePreviews) => {
+app.controller('popupCtrl', ['$scope', 'ArticlePreviews', ($scope, ArticlePreviews) => {
 	$scope.previews = ArticlePreviews.get();
 	$scope.navCategories = false;
-	$rootScope.template = 'views/popup.html';
 
 	jQuery(window).scroll(event => {
 		let scroll = jQuery(window).scrollTop();
@@ -48,7 +47,7 @@ app.controller('popupCtrl', ['$scope', '$rootScope', 'ArticlePreviews', ($scope,
 }]);
 
 
-app.controller('articleCtrl', ['$scope', '$routeParams', '$rootScope', 'Articles', ($scope, $routeParams, $rootScope, Articles) => {
+app.controller('articleCtrl', ['$scope', '$routeParams', 'Articles', ($scope, $routeParams, Articles) => {
 	let id = +$routeParams.id;
 	$scope.article = Articles.get(id);
 	$scope.articlePath = `views/articles/${$scope.article.id}.html`;

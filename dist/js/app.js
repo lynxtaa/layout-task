@@ -27,8 +27,8 @@ app.controller('mainCtrl', function ($scope) {
 	};
 });
 
-app.controller('popupCtrl', ['$scope', 'ArticlePreviews', function ($scope, ArticlePreviews) {
-	$scope.previews = ArticlePreviews.get();
+app.controller('popupCtrl', ['$scope', 'Articles', function ($scope, Articles) {
+	$scope.previews = Articles.get();
 	$scope.navCategories = false;
 
 	$(document).ready(function () {
@@ -55,7 +55,6 @@ app.controller('popupCtrl', ['$scope', 'ArticlePreviews', function ($scope, Arti
 app.controller('articleCtrl', ['$scope', '$routeParams', '$timeout', 'Articles', function ($scope, $routeParams, $timeout, Articles) {
 	var id = +$routeParams.id;
 	$scope.article = Articles.get(id);
-	$scope.articlePath = 'views/articles/' + $scope.article.id + '.html';
 
 	// Reading Progress (better move to separate directive)
 	$scope.finishLoading = function () {

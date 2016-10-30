@@ -17,6 +17,7 @@ app.controller('mainCtrl', ['$scope', '$rootScope', function ($scope, $rootScope
 	$scope.popup = {
 		active: false,
 		show: function show() {
+			window.scrollTo(0, 0);
 			this.active = true;
 		},
 		hide: function hide() {
@@ -64,3 +65,19 @@ app.controller('articleCtrl', ['$scope', '$routeParams', '$rootScope', 'Articles
 		})(jQuery);
 	};
 }]);
+
+app.directive('category', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/category.html',
+		replace: true
+	};
+});
+
+app.directive('popupTemplate', function () {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/popup.html',
+		replace: true
+	};
+});

@@ -88,3 +88,11 @@ app.directive('popupTemplate', () => {
 		replace: true
 	};
 });
+
+app.directive('progressBar', () => {
+	return {
+		restrict: 'E',
+		templateUrl: 'views/progressbar.html',
+		replace: true
+	};
+});
